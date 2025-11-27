@@ -1,16 +1,107 @@
-# React + Vite
+# 🪙 Currency Converter (React + Custom Hook)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and elegant Currency Converter built with React, Tailwind CSS, and a custom hook (useCurrencyInfo) that fetches real-time exchange rates from an external API.
 
-Currently, two official plugins are available:
+# 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🌍 Convert any currency to another in real-time
+- 🔄 Swap currencies instantly
+- 📡 Live exchange rates using a public CDN API
+- 🧩 Reusable InputBox component
+- 🎣 Custom React hook for API calls
+- 🎨 Beautiful UI with Tailwind CSS
+- ⚡ Fully responsive design
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# 📂 Project Structure
+```
+src/
+│── components/
+│   └── InputBox.jsx
+│   └── index.js           # Barrel export
+│
+│── hooks/
+│   └── useCurrencyInfo.js
+│
+│── App.jsx
+│── main.jsx
 
-## Expanding the ESLint configuration
+```
+# 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React (Vite)
+- Tailwind CSS
+- Custom Hooks
+- JavaScript
+- Fetch API
+- JSDelivr Currency API
+
+ # 🔌 API Used
+
+This project fetches currency exchange rates from:
+```
+https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/
+```
+
+Example:
+```
+/usd.json
+/inr.json
+```
+
+Returns all rates relative to the base currency.
+
+# 🧩 Components
+
+InputBox
+
+- Reusable input component for:
+- entering an amount
+- selecting a currency
+- disabling fields
+- dynamic rendering of currency options
+
+# 🎣 Custom Hook: useCurrencyInfo(currency)
+
+Fetches exchange rates for the selected base currency.
+
+Returns:
+```
+{
+   inr: 83.12,
+   eur: 0.91,
+   ...
+}
+
+```
+Used inside App.jsx to get conversion values dynamically.
+
+
+# ▶️ How to Run Locally
+
+## 1️⃣ Clone the repository
+```
+git clone <your-repo-url>
+cd currency-converter
+```
+## 2️⃣ Install dependencies
+```
+npm install
+```
+
+## 3️⃣ Start dev server
+```
+npm run dev
+```
+
+Your app will be live on:
+```
+👉 http://localhost:5173/ (default Vite port)
+```
+
+
+# 📸 Preview
+<img width="1512" height="828" alt="Screenshot 2025-11-27 at 4 21 23 PM" src="https://github.com/user-attachments/assets/6a2631e9-cd25-43fc-989e-fcd4f9e8cfff" />
+
+
+
